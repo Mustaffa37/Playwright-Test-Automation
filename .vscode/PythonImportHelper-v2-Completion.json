@@ -1,0 +1,161 @@
+[
+    {
+        "label": "Page",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "Page",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "Page",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "sync_playwright",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "sync_playwright",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "sync_playwright",
+        "importPath": "playwright.sync_api",
+        "description": "playwright.sync_api",
+        "isExtraImport": true,
+        "detail": "playwright.sync_api",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "LoginPage",
+        "importPath": "pages.login_page",
+        "description": "pages.login_page",
+        "isExtraImport": true,
+        "detail": "pages.login_page",
+        "documentation": {}
+    },
+    {
+        "label": "LoginPage",
+        "importPath": "pages.login_page",
+        "description": "pages.login_page",
+        "isExtraImport": true,
+        "detail": "pages.login_page",
+        "documentation": {}
+    },
+    {
+        "label": "LoginPage",
+        "importPath": "pages.login_page",
+        "description": "pages.login_page",
+        "isExtraImport": true,
+        "detail": "pages.login_page",
+        "documentation": {}
+    },
+    {
+        "label": "CartPage",
+        "importPath": "pages.cart_page",
+        "description": "pages.cart_page",
+        "isExtraImport": true,
+        "detail": "pages.cart_page",
+        "documentation": {}
+    },
+    {
+        "label": "CartPage",
+        "importPath": "pages.cart_page",
+        "description": "pages.cart_page",
+        "isExtraImport": true,
+        "detail": "pages.cart_page",
+        "documentation": {}
+    },
+    {
+        "label": "CheckoutPage",
+        "importPath": "pages.checkout_page",
+        "description": "pages.checkout_page",
+        "isExtraImport": true,
+        "detail": "pages.checkout_page",
+        "documentation": {}
+    },
+    {
+        "label": "CartPage",
+        "kind": 6,
+        "importPath": "playwright-automation.pages.cart_page",
+        "description": "playwright-automation.pages.cart_page",
+        "peekOfCode": "class CartPage:\n    def __init__(self, page: Page):\n        self.page = page\n        self.add_to_cart_button = \"text=Add to cart\"\n        self.cart_icon = \".shopping_cart_link\"\n    def add_item_to_cart(self):\n        self.page.click(self.add_to_cart_button)\n    def open_cart(self):\n        self.page.click(self.cart_icon)",
+        "detail": "playwright-automation.pages.cart_page",
+        "documentation": {}
+    },
+    {
+        "label": "CheckoutPage",
+        "kind": 6,
+        "importPath": "playwright-automation.pages.checkout_page",
+        "description": "playwright-automation.pages.checkout_page",
+        "peekOfCode": "class CheckoutPage:\n    def __init__(self, page: Page):\n        self.page = page\n        self.checkout_button = \"#checkout\"\n        self.first_name = \"#first-name\"\n        self.last_name = \"#last-name\"\n        self.postal_code = \"#postal-code\"\n        self.continue_button = \"#continue\"\n        self.finish_button = \"#finish\"\n    def proceed_to_checkout(self):",
+        "detail": "playwright-automation.pages.checkout_page",
+        "documentation": {}
+    },
+    {
+        "label": "LoginPage",
+        "kind": 6,
+        "importPath": "playwright-automation.pages.login_page",
+        "description": "playwright-automation.pages.login_page",
+        "peekOfCode": "class LoginPage:\n    def __init__(self, page: Page):\n        self.page = page\n        self.username_field = \"#user-name\"\n        self.password_field = \"#password\"\n        self.login_button = \"#login-button\"\n    def navigate(self):\n        self.page.goto(\"https://www.saucedemo.com/\")\n    def login(self, username, password):\n        self.page.fill(self.username_field, username)",
+        "detail": "playwright-automation.pages.login_page",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_login",
+        "kind": 2,
+        "importPath": "playwright-automation.tests.login_test",
+        "description": "playwright-automation.tests.login_test",
+        "peekOfCode": "def test_valid_login():\n    with sync_playwright() as p:\n        browser = p.chromium.launch(headless=False)\n        page = browser.new_page()\n        login_page = LoginPage(page)\n        login_page.navigate()\n        login_page.login(\"standard_user\", \"secret_sauce\")\n        assert \"inventory\" in page.url  # Verifying successful login\n        browser.close()",
+        "detail": "playwright-automation.tests.login_test",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_to_cart",
+        "kind": 2,
+        "importPath": "playwright-automation.tests.test_cart",
+        "description": "playwright-automation.tests.test_cart",
+        "peekOfCode": "def test_add_to_cart():\n    with sync_playwright() as p:\n        browser = p.chromium.launch(headless=False)\n        page = browser.new_page()\n        login_page = LoginPage(page)\n        cart_page = CartPage(page)\n        login_page.navigate()\n        login_page.login(\"standard_user\", \"secret_sauce\")\n        cart_page.add_item_to_cart()\n        cart_page.open_cart()",
+        "detail": "playwright-automation.tests.test_cart",
+        "documentation": {}
+    },
+    {
+        "label": "test_checkout",
+        "kind": 2,
+        "importPath": "playwright-automation.tests.test_checkout",
+        "description": "playwright-automation.tests.test_checkout",
+        "peekOfCode": "def test_checkout():\n    with sync_playwright() as p:\n        browser = p.chromium.launch(headless=False)\n        page = browser.new_page()\n        login_page = LoginPage(page)\n        cart_page = CartPage(page)\n        checkout_page = CheckoutPage(page)\n        page.screenshot(path=\"screenshot.png\")\n        login_page.navigate()\n        login_page.login(\"standard_user\", \"secret_sauce\")",
+        "detail": "playwright-automation.tests.test_checkout",
+        "documentation": {}
+    }
+]
